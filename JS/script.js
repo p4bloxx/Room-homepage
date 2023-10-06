@@ -4,11 +4,10 @@ const innerWidth = window.innerWidth;
 const widthToString = innerWidth.toString();
 
 
-window.addEventListener('resize', () => {
-  
-  if(innerWidth < 500){
-    images.forEach((img) => {
-      img.style.width = `${widthToString}px`;
+document.addEventListener('load', () => {
+  if(innerWidth < 500) {
+    images.forEach((image) => {
+      image.style.width = '100%';
     })
   }
 })

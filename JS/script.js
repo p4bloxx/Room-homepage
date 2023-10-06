@@ -10,10 +10,6 @@ window.addEventListener('resize', () => {
     images.forEach((img) => {
       img.style.width = `${widthToString}px`;
     })
-  } else {
-    images.forEach((img) => {
-      img.style.maxWidth = '100%';
-    })
   }
 })
 

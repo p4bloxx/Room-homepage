@@ -1,0 +1,235 @@
+@font-face {
+  font-family: 'League Spartan';
+  src: url('../ASSETS/Typeface/LeagueSpartan-VariableFont_wght.ttf');
+  font-weight: 100 1000;
+}
+
+//Colors
+$white: rgba(255, 255, 255, 1);
+$black: rgba(0, 0, 0, 1);
+$light-gray: rgba(160, 160, 160, 1);
+$dark-gray: rgba(68, 68, 68, 1);
+
+
+//Tipography
+
+$fs-14: 0.875rem;
+$fs-15: 0.9375rem;
+$fs-16: 1rem;
+$fs-40: 2.5rem;
+$fs-48: 3rem;
+
+$lett-spacing1: -0.33px;
+$lett-spacing2: -0.667px;
+$lett-spacing3: -1.667px;
+$lett-spacing4: -2px;
+$lett-spacing5: 5px;
+$lett-spacing6: 5.833px;;
+$lett-spacing7: 12.5px;
+
+$l-height: 1.375rem;
+
+$fw-mdm: 500;
+$fw-s-bld: 600;
+$fw-bld: 700;
+
+//general reset
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+ul{
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+svg{
+  display: inline;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body{
+  font-family: 'League Spartan', sans-serif;
+  font-weight: $fw-mdm;
+  font-size: $fs-16;
+  color: $black;
+  background-color: $white;
+  position: relative;
+  min-height: 100vh;
+}
+
+//when nav menu is open (mobile)
+.block-over{
+  overflow-y: hidden;
+}
+
+//black screen when nav menu is open
+.black-close{
+  position: absolute;
+  inset: 0;
+  background-color: $black;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s linear;
+}
+
+.active{
+  opacity: 0.5;
+  z-index: 4;
+}
+
+//Components and mixins
+@media screen and (min-width: 75rem) {
+  button{
+    cursor: pointer;
+  }
+}
+.arr-article{
+  font-size: $fs-15;
+  letter-spacing: $lett-spacing7;
+    &:focus-visible{
+      border: 1px solid $black;
+    }
+  
+    & span{
+      display: inline-block;
+    }
+    &,
+    .arrow path{
+      transition: all 0.3s linear;
+    }
+
+    & span .arrow path{
+      fill: $black;
+    }
+
+    @media screen and (min-width: 75rem) {
+      &:hover{
+        color: $light-gray;
+      }
+      &:hover .arrow path{
+        fill: $light-gray;
+      }
+    }
+}
+
+
+
+h1{
+  font-size: $fs-40;
+  letter-spacing: $lett-spacing3;
+  line-height: 100%;
+  font-weight: $fw-s-bld;
+}
+
+h2{
+  font-weight: $fw-bld;
+  font-size: $fs-14;
+  letter-spacing: $lett-spacing6;
+}
+
+p{
+  color: $light-gray;
+  font-size: $fs-16;
+  line-height: $l-height;
+  letter-spacing: $lett-spacing1;
+}
+
+@media screen and (min-width: 75rem) {
+  h1{
+    font-size: $fs-48;
+    letter-spacing: $lett-spacing4;
+  }
+
+  h2{
+    font-size: $fs-16;
+    letter-spacing: $lett-spacing5;
+  }
+}
+
+@mixin flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row
+}
+
+@mixin flex-col{
+  @include flex;
+  flex-direction: column;
+}
+
+.glide__arrows{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    .glide__arrow{
+      position: static;
+      width: 3.5rem;
+      height: 3.5rem;
+      box-shadow: none;
+      background-color: $black;
+      display: grid;
+      place-content: center;
+      border: none;
+      outline: none;
+      border-radius: 0;
+        & img{
+          transform: scale(0.8);
+        }
+    }
+}

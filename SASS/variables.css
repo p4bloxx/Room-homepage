@@ -1,0 +1,181 @@
+@font-face {
+  font-family: "League Spartan";
+  src: url("../ASSETS/Typeface/LeagueSpartan-VariableFont_wght.ttf");
+  font-weight: 100 1000;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  display: inline;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  min-height: 100vh;
+}
+
+.block-over {
+  overflow-y: hidden;
+}
+
+.black-close {
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s linear;
+}
+
+.active {
+  opacity: 0.5;
+  z-index: 4;
+}
+
+@media screen and (min-width: 75rem) {
+  button {
+    cursor: pointer;
+  }
+}
+.arr-article {
+  font-size: 0.9375rem;
+  letter-spacing: 12.5px;
+}
+.arr-article:focus-visible {
+  border: 1px solid rgb(0, 0, 0);
+}
+.arr-article span {
+  display: inline-block;
+}
+.arr-article,
+.arr-article .arrow path {
+  transition: all 0.3s linear;
+}
+.arr-article span .arrow path {
+  fill: rgb(0, 0, 0);
+}
+@media screen and (min-width: 75rem) {
+  .arr-article:hover {
+    color: rgb(160, 160, 160);
+  }
+  .arr-article:hover .arrow path {
+    fill: rgb(160, 160, 160);
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -1.667px;
+  line-height: 100%;
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 5.833px;
+}
+
+p {
+  color: rgb(160, 160, 160);
+  font-size: 1rem;
+  line-height: 1.375rem;
+  letter-spacing: -0.33px;
+}
+
+@media screen and (min-width: 75rem) {
+  h1 {
+    font-size: 3rem;
+    letter-spacing: -2px;
+  }
+  h2 {
+    font-size: 1rem;
+    letter-spacing: 5px;
+  }
+}
+.glide__arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.glide__arrows .glide__arrow {
+  position: static;
+  width: 3.5rem;
+  height: 3.5rem;
+  box-shadow: none;
+  background-color: rgb(0, 0, 0);
+  display: grid;
+  place-content: center;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+.glide__arrows .glide__arrow img {
+  transform: scale(0.8);
+}/*# sourceMappingURL=variables.css.map */

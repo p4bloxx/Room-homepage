@@ -1,0 +1,237 @@
+@import 'variables';
+
+main{
+  position: relative;
+    @media screen and (max-width: 47rem) {
+      .imgdesk{
+        display: none;
+      }
+    }
+
+    header,
+    .nav-box{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      padding-block-start: 3.125em;
+      padding-inline-start: 1.5rem;
+      gap: 7.0625em;
+      @include flex;
+      justify-content: start;
+
+        .nav-box{
+          /* z-index: 30; */
+          background-color: $white;
+          inset: 0;
+          gap: 4rem;
+          padding-block-end: 2.875rem;
+          transition: transform 0.3s linear;
+          transform: translateY(-100%);
+            .nav ul{
+              @include flex;
+              gap: 1.8rem;
+            }
+        }
+
+        .open-nav{
+          transform: translateY(0%);
+        }
+    }
+
+    .box-logo{
+      @include flex;
+      justify-content: space-between;
+      width: 55%;
+      margin-inline-end: 9.75rem;
+      align-self: start;
+    }
+
+    .glide__arrows{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+        .glide__arrow:focus-visible{
+          border: 1px solid $white;
+        }
+    }
+    .box{
+      @include flex-col;
+      align-items: start;
+      /* justify-content: start; */
+      padding-inline: 2rem;
+      padding-block: 3.75rem 4.5rem;
+        p{
+          margin-block: 1rem 2.5rem;
+        }
+    }
+}
+
+.about-content{
+  @include flex-col;
+  gap: 1rem;
+  align-items: start;
+  padding-inline: 2rem;
+  padding-block: 3.125em 2.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .imgmob{
+    display: none;
+  }
+
+  .hamb-icon{
+    display: none;
+  }
+
+  main{
+    header,
+      .nav-box{
+        padding-block-start: 4rem;
+        padding-inline-start: 4rem;
+        gap: 3.5rem;
+        justify-content: start;
+  
+          .nav-box{
+            background-color: transparent;
+            gap: 0;
+            padding-block-end: 0;
+            transform: none;
+            justify-content: start;
+            position: initial;
+            padding: 0;
+            color: $white;
+            height: fit-content;
+              & ul li{
+                position: relative;
+              }
+          }
+      }
+
+      .box-logo{
+        width: fit-content;
+        margin-inline-end: 0;
+        align-self: center;
+        cursor: pointer;
+      }
+
+      .box{
+        padding-inline: 6.5rem;
+        margin-block-end: 4rem;
+      }
+  }
+
+  
+}
+
+@media screen and (min-width: 47rem) and (max-width: 74rem) {
+  .glide__arrows{
+    .glide__arrow{
+      width: 4.375em;
+      height: 4.375em;
+    }
+  }
+
+  .about-section{
+    @include flex-col;
+    gap: 3.5rem;
+      & img{
+        /* transform: scale(1.4); */
+        width: 36.75rem;
+      }
+      .about-content{
+        padding-inline: 6.5rem;
+        align-items: center;
+        text-align: center;
+      }
+  }
+}
+
+
+@media screen and (min-width: 75rem) {
+  main{
+      header,
+      .nav-box{
+          .nav-box{
+              & ul li{
+                transition: all 0.2s linear;
+
+                  &::after{
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    right: 0;
+                    height: 3px;
+                    width: 0;
+                    margin-inline: auto;
+                    background-color: $white;
+                    transition: all 0.2s ease;
+                    cursor: pointer;
+                  }
+
+                  & ul li:hover,
+                  &:hover::after{
+                    width: 1rem;
+                  }
+              }
+          }
+      }
+      
+      .product-box{
+        @include flex;
+        align-items: start;
+          .glide{
+            width: 52.5rem;
+              .glide__slide{
+                display: block;
+                justify-content: stretch;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+              }
+
+              .glide__arrows{
+                position: absolute;
+                bottom: 0;
+                right: -10rem;
+                  .glide__arrow{
+                    width: 5rem;
+                    height: 5rem;
+                    transition: background-color 0.3s linear;
+                      &:hover{
+                        background-color: $dark-gray;
+                      }
+                      & img{
+                        transform: scale(1)
+                      }
+                  }
+              }
+          }
+
+          .article-box{
+            align-self: center;
+              .box{
+                padding-block: 7.5em;
+                padding-inline: 6.25rem;
+                margin-block-end: 0;
+                  p{
+                    margin-block: 1rem 1.625rem;
+                  }
+                }
+          }
+      }
+
+  }
+
+  .about-section{
+    @include flex;
+      .about-content{
+        padding-inline: 3.2rem;
+          @media screen and (min-width: 91rem) {
+            padding-inline: 4rem;
+          }
+      }
+  }
+}

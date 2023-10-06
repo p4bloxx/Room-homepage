@@ -180,13 +180,65 @@ p {
   transform: scale(0.8);
 }
 
-main {
-  position: relative;
+.imgdesk {
+  display: none;
 }
-@media screen and (max-width: 47rem) {
-  main .imgdesk {
+
+/* @media screen and (min-width: 47rem) {
+  .imgmob{
     display: none;
   }
+} */
+.mob1,
+.mob2,
+.mob3 {
+  position: relative;
+  height: 375px;
+  width: 360px;
+}
+
+.mob1 {
+  background: url(../ASSETS/Images/mobile-image-hero-1.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.mob2 {
+  background: url(../ASSETS/Images/mobile-image-hero-2.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.mob3 {
+  background: url(../ASSETS/Images/mobile-image-hero-3.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 48rem) {
+  .mob1,
+  .mob2,
+  .mob3 {
+    position: relative;
+    height: 534px;
+    width: 840px;
+  }
+  .mob1 {
+    background: url(../ASSETS/Images/desktop-image-hero-1.jpg) no-repeat center center;
+  }
+  .mob2 {
+    background: url(../ASSETS/Images/desktop-image-hero-2.jpg) no-repeat center center;
+  }
+  .mob3 {
+    background: url(../ASSETS/Images/desktop-image-hero-3.jpg) no-repeat center center;
+  }
+}
+@media screen and (min-width: 53.125rem) {
+  .mob1,
+  .mob2,
+  .mob3 {
+    background-size: 100%;
+  }
+}
+main {
+  position: relative;
 }
 main header,
 main .nav-box {
@@ -206,7 +258,6 @@ main .nav-box {
 }
 main header .nav-box,
 main .nav-box .nav-box {
-  /* z-index: 30; */
   background-color: rgb(255, 255, 255);
   inset: 0;
   gap: 4rem;
@@ -272,8 +323,8 @@ main .box p {
 }
 
 @media screen and (min-width: 48rem) {
-  .imgmob {
-    display: none;
+  .imgdesk {
+    display: block;
   }
   .hamb-icon {
     display: none;
@@ -325,14 +376,14 @@ main .box p {
     align-items: center;
     flex-direction: row;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 7rem;
   }
   .about-section img {
-    /* transform: scale(1.4); */
-    width: 36.75rem;
+    transform: scale(1.4);
+    /* width: 36.75rem; */
   }
   .about-section .about-content {
-    padding-inline: 6.5rem;
+    padding-inline: calc(6rem + 6vw);
     align-items: center;
     text-align: center;
   }
@@ -410,13 +461,9 @@ main .box p {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    align-items: stretch;
   }
   .about-section .about-content {
     padding-inline: 3.2rem;
-  }
-}
-@media screen and (min-width: 75rem) and (min-width: 91rem) {
-  .about-section .about-content {
-    padding-inline: 4rem;
   }
 }/*# sourceMappingURL=main.css.map */

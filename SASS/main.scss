@@ -1,13 +1,72 @@
 @import 'variables';
 
+.imgdesk{
+  display: none;
+}
+
+/* @media screen and (min-width: 47rem) {
+  .imgmob{
+    display: none;
+  }
+} */
+
+.mob1,
+.mob2,
+.mob3{
+  position: relative;
+  height: 375px;
+  width: 360px;
+}
+
+.mob1{
+  background: url(../ASSETS/Images/mobile-image-hero-1.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.mob2{
+  background: url(../ASSETS/Images/mobile-image-hero-2.jpg) no-repeat center center;
+   background-size: cover;
+}
+
+.mob3{
+  background: url(../ASSETS/Images/mobile-image-hero-3.jpg) no-repeat center center;
+   background-size: cover;
+}
+
+@media screen and (min-width: 48rem) {
+  .mob1,
+.mob2,
+.mob3{
+  position: relative;
+  height: 534px;
+  width: 840px;
+}
+  .mob1{
+    background: url(../ASSETS/Images/desktop-image-hero-1.jpg) no-repeat center center;
+    
+  }
+
+  .mob2{
+    background: url(../ASSETS/Images/desktop-image-hero-2.jpg) no-repeat center center;
+    
+  }
+
+  .mob3{
+    background: url(../ASSETS/Images/desktop-image-hero-3.jpg) no-repeat center center;
+    
+  }
+}
+
+@media screen and (min-width: 53.125rem) {
+  .mob1,
+  .mob2,
+  .mob3{
+    background-size: 100%;
+  }
+}
+
 main{
   position: relative;
-    @media screen and (max-width: 47rem) {
-      .imgdesk{
-        display: none;
-      }
-    }
-
     header,
     .nav-box{
       position: absolute;
@@ -22,7 +81,6 @@ main{
       justify-content: start;
 
         .nav-box{
-          /* z-index: 30; */
           background-color: $white;
           inset: 0;
           gap: 4rem;
@@ -77,10 +135,11 @@ main{
 }
 
 @media screen and (min-width: 48rem) {
-  .imgmob{
-    display: none;
-  }
 
+  .imgdesk{
+    display: block;
+  }
+  
   .hamb-icon{
     display: none;
   }
@@ -135,13 +194,13 @@ main{
 
   .about-section{
     @include flex-col;
-    gap: 3.5rem;
+    gap: 7rem;
       & img{
-        /* transform: scale(1.4); */
-        width: 36.75rem;
+        transform: scale(1.4);
+        /* width: 36.75rem; */
       }
       .about-content{
-        padding-inline: 6.5rem;
+        padding-inline: calc(6rem + 6vw);
         align-items: center;
         text-align: center;
       }
@@ -227,11 +286,9 @@ main{
 
   .about-section{
     @include flex;
+    align-items: stretch;
       .about-content{
         padding-inline: 3.2rem;
-          @media screen and (min-width: 91rem) {
-            padding-inline: 4rem;
-          }
       }
   }
 }

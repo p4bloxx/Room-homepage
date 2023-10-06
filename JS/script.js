@@ -1,23 +1,21 @@
-const imgHero = document.querySelectorAll('.imgHero');
-const imgDesk = document.querySelectorAll('.imgdesk');
-const images = Array.from(imgHero);
-const deskArray = Array.from(imgDesk);
-console.log(images[2].firstElementChild)
+const imgAbout = document.querySelectorAll('.imgAbout');
+const images = Array.from(imgAbout);
+const innerWidth = window.innerWidth;
+const widthToString = innerWidth.toString();
+
 
 window.addEventListener('resize', () => {
-  const innerWidth = window.innerWidth;
-  const widthToString = innerWidth.toString();
+  
   if(innerWidth < 500){
     images.forEach((img) => {
       img.style.width = `${widthToString}px`;
     })
-  } else if (innerWidth > 800 && innerWidth < 1200) {
-    deskArray.forEach((desk) => {
-      desk.style.width = `${widthToString}px`;
+  } else {
+    images.forEach((img) => {
+      img.style.maxWidth = '100%';
     })
   }
 })
-
 
 const config = {
   type: 'carousel',
@@ -56,11 +54,7 @@ glide.on(['mount.after', 'run'], () => {
     box3.style.display = 'flex'
   }
 })
-
-
-glide.mount()
-
-
+glide.mount();
 
 
 //for slide menu (mobile)

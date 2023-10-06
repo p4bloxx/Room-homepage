@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/room-homepage-html-csssass-js-glidejs-XJwTTXuFYj](https://www.frontendmentor.io/solutions/room-homepage-html-csssass-js-glidejs-XJwTTXuFYj)
 - Live Site URL: [https://p4bloxx.github.io/Room-homepage/](https://p4bloxx.github.io/Room-homepage/)
 
 ## My process
